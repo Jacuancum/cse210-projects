@@ -12,14 +12,28 @@ class Program
         number = Console.ReadLine();
         answer = Convert.ToInt32(number);
 
-
         string guess;
         int guessnumber;
-        
-        Console.Write("What is your guess?");
+
+        do{
+        Console.Write("What is your guess? ");
         guess = Console.ReadLine();
         guessnumber = Convert.ToInt32(guess);
-        
+                
+            if (guessnumber > answer)
+            {
+                Console.WriteLine("Lower, please.");guessnumber++;
+            }
+            else if (guessnumber < answer)
+            {
+                Console.WriteLine("Higher, please.");guessnumber++;
+            }
+            else
+                Console.WriteLine("You guessed it!");
+        }while (guessnumber != answer);
+
+
+        /*
         if (guessnumber > answer)
         {
             Console.WriteLine("Lower");
@@ -32,6 +46,7 @@ class Program
         {
             Console.WriteLine("You guessed it!");
         }
+        */
 
     }
 }
