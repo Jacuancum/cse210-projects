@@ -27,20 +27,20 @@ class Program
         numbers.Add(numbergiven);
         }while (numbergiven != 0);
         
-        /*
-        int max;
-        foreach {
-            if (numbergiven > max) {
-                max = numbergiven;
+        
+        int max = numbers[0];
+        foreach (int i in numbers) {
+            if (i > max) {
+                max = i;
             }
         }
-        */
-
+        
         int Count = numbers.Count -1;
         Console.WriteLine($"The numbers count is: {Count}");
         Console.WriteLine($"The sum is: {numbers.Sum()}");
-        Console.WriteLine($"The average is: {numbers.Average()}");
-        //Console.WriteLine($"The largest number is: {numbers.max()}");
+        float average = ((float)numbers.Sum()) / numbers.Count;
+        Console.WriteLine($"The average is: {average}");
+        Console.WriteLine($"The largest number is: {max}");
 
     }
 }
