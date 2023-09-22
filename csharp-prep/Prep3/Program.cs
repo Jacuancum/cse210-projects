@@ -1,4 +1,5 @@
 using System;
+using System.Xml;
 
 class Program
 {
@@ -22,11 +23,11 @@ class Program
                 
             if (guessnumber > answer)
             {
-                Console.WriteLine("Lower, please.");guessnumber++;
+                Console.WriteLine("Lower, please.");++guessnumber;
             }
             else if (guessnumber < answer)
             {
-                Console.WriteLine("Higher, please.");guessnumber++;
+                Console.WriteLine("Higher, please.");++guessnumber;
             }
             else
                 Console.WriteLine("You guessed it!");
