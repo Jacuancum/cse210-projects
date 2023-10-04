@@ -60,6 +60,5 @@ public class Journal
         }
         Console.WriteLine("See you next time.");
     }
-    
+
 }
-    

@@ -10,7 +10,10 @@ namespace RandomQuestionGenerator
          "What was the strongest emotion I felt today?", 
          "If I had one thing I could do over today, what would it be?", 
          "Who was the most interesting person I interacted with today?", 
-         "What did you eat today?"};
+         "What did you eat today?",
+         "What do you want to improve if you can do one more time?",
+         "Where have you been to today?",
+         "How was the weather today?"};
 
         public static string _randomQuesionsPrompt()
         {
