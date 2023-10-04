@@ -21,9 +21,14 @@ public class Journal
             string dateText = theCurrentTime.ToShortDateString();
             
             var randomQuestion = PromptQuestion._randomQuesionsPrompt();
+            
             if (answer == "1")
-                //Console.WriteLine(dateText);
+            {   
+                Console.WriteLine("[" + dateText + "]");
                 Console.WriteLine(randomQuestion);
+                string userEntry;
+                userEntry = Console.ReadLine();
+            }
             else if (answer == "2")
                 Console.WriteLine("OUT OF SERVICE");
             else if (answer == "5")

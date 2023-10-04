@@ -1,18 +1,23 @@
-using System.IO;
-using System.Text;
+using System;
 
 namespace RandomQuestionGenerator
 {
     public class PromptQuestion
     {
-        public static string[] _questions = {"a", "b", "c", "d", "e", "f"};
+        private static string[] _questions = 
+        {"What was the best part of my day?",
+         "How did I see the hand of the Lord in my life today?", 
+         "What was the strongest emotion I felt today?", 
+         "If I had one thing I could do over today, what would it be?", 
+         "Who was the most interesting person I interacted with today?", 
+         "What did you eat today?"};
 
         public static string _randomQuesionsPrompt()
         {
             var rand = new Random();
             string randomQuestion = _questions[rand.Next(_questions.Length)];
 
-            return $"{_questions}";
+            return randomQuestion;
         }
     }
 }
