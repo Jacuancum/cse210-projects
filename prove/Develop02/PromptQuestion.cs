@@ -12,7 +12,7 @@ namespace RandomQuestionGenerator
          "Who was the most interesting person I interacted with today?", 
          "What did you eat today?",
          "What do you want to improve if you can do one more time?",
-         "Where have you been to today?",
+         "Where have you been today?",
          "How was the weather today?"};
 
         public static string _randomQuesionsPrompt()

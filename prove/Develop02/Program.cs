@@ -1,5 +1,5 @@
 using System;
-using System.Collections.Generic;
+using System.IO;
 using RandomQuestionGenerator;
 
 public class Journal
@@ -9,7 +9,7 @@ public class Journal
         Console.WriteLine("Hello Develop02 World!");
         Console.WriteLine("Welcome back to your journal.");
         string answer;
-        List<string> journal = new List<string>();
+        string journalFileName = "journal.txt";
         while (true)
         {
             Console.WriteLine("1. Write");
@@ -31,12 +31,17 @@ public class Journal
                 Console.WriteLine(randomQuestion);
                 string dataEntry;
                 dataEntry = Console.ReadLine();
-                journal.Add("[" + dateText + "]\n" + randomQuestion + "\n" + dataEntry);
+                string journalEntry = "[" + dateText + "]\n" + randomQuestion + "\n" + dataEntry;
+                using (StreamWriter writer = File.AppendText(journalFileName))
+                {
+                    writer.WriteLine(journalEntry);
+                }
             }
             else if (answer == "2")
             {
                 Console.WriteLine("Your journal:");
-                foreach(var entry in journal)
+                string[] journalEntries = File.ReadAllLines(journalFileName);
+                foreach(var entry in journalEntries)
                 {
                     Console.WriteLine(entry);
                 }
