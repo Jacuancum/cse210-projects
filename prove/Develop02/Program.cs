@@ -52,7 +52,24 @@ public class Journal
             }
             else if (answer == "4")
             {
-                Console.WriteLine("OUT OF SERVICE");
+                Console.WriteLine("Option 1: Save to current journal file.\nOption 2: Create a new file.\nWhat would you like to do? ");
+                string saveOption = Console.ReadLine();
+
+                if (saveOption == "1")
+                {
+                    Console.WriteLine("Journal saved in the current file.");
+                }
+                else if (saveOption == "2")
+                {
+                    Console.Write("Enter a new file name (e.g. Day2.txt): ");
+                    string newFileName = Console.ReadLine();
+                    File.Copy(journalFileName, newFileName, true);
+                    Console.WriteLine($"Journal saved in {newFileName}.");
+                }
+                else
+                {
+                    Console.WriteLine("Invalid option. Please enter 1 or 2.");
+                }
             }
             else if (answer == "5")
             {
