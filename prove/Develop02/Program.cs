@@ -48,12 +48,16 @@ public class Journal
             }    
             else if (answer == "3")
             {
-                Console.WriteLine("Available journal files:");
-                string[] journalFiles = Directory.GetFiles(journalFileName, "*.txt");
+                Console.WriteLine($"journal from files:{journalFileName}");
+                string[] journalEntries = File.ReadAllLines(journalFileName);
+                foreach(var entry in journalEntries)
+                {
+                    Console.WriteLine(entry);
+                }
             }
             else if (answer == "4")
             {
-                Console.WriteLine("Option 1: Save to current journal file.\nOption 2: Create a new file.\nWhat would you like to do? ");
+                Console.Write("Option 1: Save to current journal file.\nOption 2: Create a new file.\nWhat would you like to do? ");
                 string saveOption = Console.ReadLine();
 
                 if (saveOption == "1")
