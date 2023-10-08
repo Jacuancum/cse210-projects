@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel;
 using System.IO;
 using RandomQuestionGenerator;
 
@@ -12,6 +13,8 @@ public class Journal
         string journalFileName = "journal.txt";
         while (true)
         {
+            Console.WriteLine();
+            Console.WriteLine("Please pick one choice:");
             Console.WriteLine("1. Write");
             Console.WriteLine("2. Display");
             Console.WriteLine("3. Load");
@@ -27,11 +30,11 @@ public class Journal
             
             if (answer == "1")
             {   
-                Console.WriteLine("[" + dateText + "]");
+                Console.WriteLine("Date: " + dateText);
                 Console.WriteLine(randomQuestion);
                 string dataEntry;
                 dataEntry = Console.ReadLine();
-                string journalEntry = "[" + dateText + "]\n" + randomQuestion + "\n" + dataEntry;
+                string journalEntry = "Date: " + dateText + " - Prompt: " + randomQuestion + "\n" + dataEntry;
                 using (StreamWriter writer = File.AppendText(journalFileName))
                 {
                     writer.WriteLine(journalEntry);
@@ -43,6 +46,10 @@ public class Journal
                 string[] journalEntries = File.ReadAllLines(journalFileName);
                 foreach(var entry in journalEntries)
                 {
+                    if (entry.StartsWith("Date: ") || entry.StartsWith("["))
+                    {
+                        Console.WriteLine();
+                    }
                     Console.WriteLine(entry);
                 }
             }    
