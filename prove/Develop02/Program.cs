@@ -48,7 +48,8 @@ public class Journal
             }    
             else if (answer == "3")
             {
-                Console.WriteLine("OUT OF SERVICE");
+                Console.WriteLine("Available journal files:");
+                string[] journalFiles = Directory.GetFiles(journalFileName, "*.txt");
             }
             else if (answer == "4")
             {

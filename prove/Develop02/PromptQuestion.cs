@@ -11,7 +11,7 @@ namespace RandomQuestionGenerator
          "If I had one thing I could do over today, what would it be?", 
          "Who was the most interesting person I interacted with today?", 
          "What did you eat today?",
-         "What do you want to improve if you can do one more time?",
+         "What do you want to improve today if you can do it again?",
          "Where have you been today?",
          "How was the weather today?"};
 
