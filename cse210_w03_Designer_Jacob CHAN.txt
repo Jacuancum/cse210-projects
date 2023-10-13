@@ -2,37 +2,26 @@ Abstraction - Design Activity
  
 Classes:
 1. Journal
-- It holds the menu except for the Quit 
-- Add new enrty
-- Display the entry/entries
-- Save and name the entry into a file
-- load from file
-Behaviors or Functions:
-- addEntry - add new entry to journal
-- displayEntry - display entry to journal
-- saveFile - save entry to file
-- loadFile - load from file
-Attributes/Variables/Data type:
-- List <entries> [entry1, entry2, entry3]
+	- It holds the menu options "1,2,3,4,5"
+	Behaviors:
+	- Adding an entry
+	- Displaying all the entries
+	- Saving to a file
+	- Loading from a file
+	Attributes/Variables/Data type:
+	- List<Entry>
  
-2. DataEntry
-- assess the data entry
-- store the data entry
-Behaviors or Functions:
-- assessEntry
-- storeEntry
-Attributes/Variables/Data type:
-- string _assess
-- List <storeEntry> [entry1, entry2, entry3]
+2. Entry
+	Behaviors:
+	- store the data entry
+	- create new file for saving data entry
+	Attributes/Variables/Data type:
+	- _storeEntry
  
-3. PromptQuestion
-- fixed prompt questions for 1-5
-- random questions for question no.1
-Behaviors or Functions:
-- promptQuestion
-- randomQuestion
-Attributes/Variables/Data type:
-- we will get the prompt questions here, so no attributes
-
-*The Journal Class will be  the main Class in the program.cs
- The Class DataEntry and the Class PromptQuestion will be in their own .cs file, can called by the program.cs.
+3. PromptGenerator
+	- Holding a list to store pre-set questions
+	- show random questions when receving input from user from menu option1 - "Write"
+	Behaviors:
+	- generate random question
+	Attributes/Variables/Data type:
+	- _randomQuestion

@@ -1,9 +1,6 @@
 using System;
-using System.ComponentModel;
-using System.IO;
-using RandomQuestionGenerator;
 
-public class Journal
+public class Program
 {
     public static void Main(string[] args)
     {
@@ -11,6 +8,9 @@ public class Journal
         Console.WriteLine("Welcome back to your journal.");
         string answer;
         string journalFileName = "journal.txt";
+
+        Journal journal = new Journal(journalFileName);
+
         while (true)
         {
             Console.WriteLine();
@@ -23,44 +23,22 @@ public class Journal
             Console.Write("What would you like to do? ");
             answer = Console.ReadLine();
 
-            DateTime theCurrentTime = DateTime.Now;
-            string dateText = theCurrentTime.ToShortDateString();
-            
-            var randomQuestion = PromptQuestion._randomQuesionsPrompt();
-            
             if (answer == "1")
-            {   
-                Console.WriteLine("Date: " + dateText);
+            {
+                Console.WriteLine("Date: " + DateTime.Now.ToShortDateString());
+                string randomQuestion = PromptGenerator.GetRandomQuestion();
                 Console.WriteLine(randomQuestion);
-                string dataEntry;
-                dataEntry = Console.ReadLine();
-                string journalEntry = "Date: " + dateText + " - Prompt: " + randomQuestion + "\n" + dataEntry;
-                using (StreamWriter writer = File.AppendText(journalFileName))
-                {
-                    writer.WriteLine(journalEntry);
-                }
+                string dataEntry = Console.ReadLine();
+                journal.AddEntry(dataEntry, randomQuestion, DateTime.Now.ToShortDateString());
             }
             else if (answer == "2")
             {
-                Console.WriteLine("Your journal:");
-                string[] journalEntries = File.ReadAllLines(journalFileName);
-                foreach(var entry in journalEntries)
-                {
-                    if (entry.StartsWith("Date: ") || entry.StartsWith("["))
-                    {
-                        Console.WriteLine();
-                    }
-                    Console.WriteLine(entry);
-                }
-            }    
+                journal.DisplayEntries();
+            }
             else if (answer == "3")
             {
-                Console.WriteLine($"journal from files:{journalFileName}");
-                string[] journalEntries = File.ReadAllLines(journalFileName);
-                foreach(var entry in journalEntries)
-                {
-                    Console.WriteLine(entry);
-                }
+                Console.WriteLine($"Journal from file: {journalFileName}");
+                journal.LoadFromFile(journalFileName);
             }
             else if (answer == "4")
             {
@@ -69,13 +47,14 @@ public class Journal
 
                 if (saveOption == "1")
                 {
+                    journal.SaveToFile(journalFileName);
                     Console.WriteLine("Journal saved in the current file.");
                 }
                 else if (saveOption == "2")
                 {
-                    Console.Write("Enter a new file name (e.g. Day2.txt): ");
+                    Console.Write("Enter a new file name (e.g., Day2.txt): ");
                     string newFileName = Console.ReadLine();
-                    File.Copy(journalFileName, newFileName, true);
+                    journal.SaveToFile(newFileName);
                     Console.WriteLine($"Journal saved in {newFileName}.");
                 }
                 else
@@ -89,10 +68,9 @@ public class Journal
             }
             else
             {
-                Console.WriteLine("Invalid. Please entry 1, 2, 3, 4, or 5.");
+                Console.WriteLine("Invalid. Please enter 1, 2, 3, 4, or 5.");
             }
         }
         Console.WriteLine("See you next time.");
     }
-
 }
