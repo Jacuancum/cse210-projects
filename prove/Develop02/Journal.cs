@@ -24,8 +24,12 @@ public class Journal
     {
         string[] journalEntries = File.ReadAllLines(journalFileName);
         foreach (var entry in journalEntries)
-        {
-            Console.WriteLine(entry);
+        {    
+            if (entry.StartsWith("Date: ") || entry.StartsWith("["))
+            {
+                Console.WriteLine();
+            }
+        Console.WriteLine(entry);
         }
     }
 

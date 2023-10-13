@@ -33,3 +33,5 @@ Date: 13/10/2023 - Prompt: What did you eat today?
 I ate popcorn.
 Date: 13/10/2023 - Prompt: What did you eat today?
 I ate soy source chicken leg with rice.
+Date: 13/10/2023 - Prompt: What did you eat today?
+I ate yogurt and congee.
