@@ -1,5 +1,4 @@
 using System;
-
 public class PromptGenerator
 {
     private static string[] _randomQuestions = 
@@ -14,11 +13,10 @@ public class PromptGenerator
         "Where have you been today?",
         "How was the weather today?"
     };
-
     public static string GetRandomQuestion()
     {
         var rand = new Random();
-        string randomQuestion = _randomQuestions[rand.Next(_randomQuestions.Length)];
+        string randomQuestion = _randomQuestions [rand.Next(_randomQuestions.Length)];
         return randomQuestion;
     }
 }
