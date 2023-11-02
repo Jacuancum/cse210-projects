@@ -2,15 +2,15 @@ using System;
 
 public class Activity
 {
-    protected string ActivityName { get; set; }
-    protected string Description { get; set; }
-    protected int Duration { get; set; }
+    protected string _activityName { get; set; }
+    protected string _description { get; set; }
+    protected int _duration { get; set; }
 
     public Activity(string activityName, string description, int duration)
     {
-        ActivityName = activityName;
-        Description = description;
-        Duration = duration;
+        _activityName = activityName;
+        _description = description;
+        _duration = duration;
     }
     
     public void DisplaySpinner(int seconds)
