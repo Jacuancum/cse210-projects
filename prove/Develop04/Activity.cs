@@ -15,13 +15,31 @@ public class Activity
     
     public void DisplaySpinner(int seconds)
     {
-        string spinnerChars = "-\\|/";
-        for (int i = 0; i < seconds * 2; i++)
+        List<string> animationStrings = new List<string>();
+        animationStrings.Add("|");
+        animationStrings.Add("/");
+        animationStrings.Add("-");
+        animationStrings.Add("\\");
+
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(10);
+        int i = 0;
+        while (DateTime.Now < endTime)
         {
-            Console.Write(spinnerChars[i % spinnerChars.Length]);
-            System.Threading.Thread.Sleep(200);
-            Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
+            //Console.Write(".");
+            //Thread.Sleep(1000);
+            string s = animationStrings[i];
+            Console.Write(s);
+            Thread.Sleep(1000);
+            Console.Write("\b \b");
+            i++;
+
+            //because only 0-3 things in the list, index 4 is a problem
+            if ( i >= animationStrings.Count)
+            {
+                i = 0;
+            }
         }
-        Console.WriteLine();
+        Console.WriteLine("Done.");
     }
 }
