@@ -24,11 +24,13 @@ class Program
             }
             else if (input == "2")
             {
-
+                ReflectingActivity reflectingActivity = new ReflectingActivity();
+                reflectingActivity.RunTheActivity();
             }
             else if (input == "3")
             {
-
+                ListingActivity listingActivity = new ListingActivity();
+                listingActivity.RunTheActivity();
             }
             else
             {
