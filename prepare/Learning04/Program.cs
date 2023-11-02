@@ -7,7 +7,6 @@ class Program
         Assignment one = new Assignment("Little Egg", "Philosophy");
         Console.WriteLine(one.GetSummary());
 
-        
         MathAssignment two = new MathAssignment("John Locke", "Introduction to Liberalism", "6.4", "19-84");
         Console.WriteLine(two.GetSummary());
         Console.WriteLine(two.GetHomeworkList());
