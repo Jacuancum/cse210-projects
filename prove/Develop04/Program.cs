@@ -19,9 +19,7 @@ class Program
             }
             else if (input == "1")
             {
-                Console.Write("How long, in second, would you like for your session? ");
-                int duration = int.Parse(Console.ReadLine());
-                BreathingActivity breathingActivity = new BreathingActivity(duration);
+                BreathingActivity breathingActivity = new BreathingActivity();
                 breathingActivity.RunTheActivity();
             }
             else if (input == "2")

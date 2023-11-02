@@ -21,8 +21,10 @@ public class Activity
         animationStrings.Add("-");
         animationStrings.Add("\\");
 
+        Console.WriteLine();
+
         DateTime startTime = DateTime.Now;
-        DateTime endTime = startTime.AddSeconds(10);
+        DateTime endTime = startTime.AddSeconds(5);
         int i = 0;
         while (DateTime.Now < endTime)
         {
@@ -40,6 +42,8 @@ public class Activity
                 i = 0;
             }
         }
-        Console.WriteLine("Done.");
+        Console.WriteLine("Well Done.");
+        Console.WriteLine();
+        Thread.Sleep(1500);
     }
 }
