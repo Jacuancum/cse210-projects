@@ -67,18 +67,4 @@ public class Activity
         Console.WriteLine(message);
         Thread.Sleep(1000);
     }
-
-    protected string GetPrompt()
-    {
-        Random random = new Random();
-        int randomPromptIndex = random.Next(0, _prompts.Count);
-        return _prompts[randomPromptIndex];
-    }
-    protected string GetRandomQuestion()
-    {
-        Random random = new Random();
-        int randomQuestionIndex = random.Next(0, _questions.Count);
-        return _questions[randomQuestionIndex];
-    }
-
 }
