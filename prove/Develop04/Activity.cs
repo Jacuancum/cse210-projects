@@ -6,8 +6,6 @@ public class Activity
     protected string _activityName { get; set; }
     protected string _description { get; set; }
     protected int _duration { get; set; }
-    public List<string> _prompts { get; set; }
-    public List<string> _questions { get; set; }
     
     public Activity(string activityName, string description, int duration)
     {
@@ -65,6 +63,19 @@ public class Activity
     protected void Message(string message)
     {
         Console.WriteLine(message);
+        Thread.Sleep(1000);
+    }
+
+    protected void GetReady()
+    {
+        Console.WriteLine("Please get ready in 5 seconds:");
+        for (int i = 5; i > 0; i--)
+        {
+            Console.Write(i);
+            Thread.Sleep(1000);
+            Console.Write("\b \b");
+        }
+        Console.WriteLine("Start");
         Thread.Sleep(1000);
     }
 }

@@ -13,16 +13,7 @@ public class ReflectingActivity : Activity
         int duration = int.Parse(Console.ReadLine());
         _duration = duration;
 
-        
-        Console.WriteLine("Please get ready in 5 seconds:");
-        for (int i = 5; i > 0; i--)
-        {
-            Console.Write(i);
-            Thread.Sleep(1000);
-            Console.Write("\b \b");
-        }
-        Console.WriteLine("Start");
-        Thread.Sleep(1000);
+        GetReady();
 
         List<string> _prompts = new List<string>
         {
