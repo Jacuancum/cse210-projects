@@ -4,14 +4,7 @@ public class BreathingActivity : Activity
 
     public void RunTheActivity()
     {
-        Console.Clear();
-        Console.WriteLine(_activityName);
-        Console.WriteLine();
-        Thread.Sleep(1500);
-        Console.WriteLine(_description);
-        Console.WriteLine();
-        Thread.Sleep(1500);
-
+        TheWelcome();
 
         Console.Write("How long, in second, would you like for your session? ");
         int duration = int.Parse(Console.ReadLine());
@@ -26,7 +19,8 @@ public class BreathingActivity : Activity
             Console.Write("\b \b");
         }
         Console.WriteLine("Start");
-
+        Thread.Sleep(1000);
+        
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(_duration);
         int d = 0;
