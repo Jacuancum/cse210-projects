@@ -1,8 +1,8 @@
-public class LoadGoals : BaseGoal
+public class LoadGoals : Goal
 {
     public LoadGoals() : base("") {}
-    public static void LoadGoalsFunction(List<string> goals)
+    public static void TheFunction(List<Goal> goals)
     {
-        Console.WriteLine("");
+        Console.Write("What is the file name for the goal file? ");
     }
 }

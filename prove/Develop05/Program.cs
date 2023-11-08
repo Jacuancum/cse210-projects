@@ -2,13 +2,14 @@ using System;
 
 class Program
 {
-    static List<BaseGoal> goals = new List<BaseGoal>();
+    static List<Goal> goals = new List<Goal>();
+    static int userScore = 0;
     static void Main(string[] args)
     {
         
         while (true)
         {
-            Console.WriteLine("You have X points.");
+            Console.WriteLine("\nYou have X points.");
             Console.WriteLine("1, Create New Goal");
             Console.WriteLine("2, List Goals");
             Console.WriteLine("3, Save Goals");
@@ -25,24 +26,22 @@ class Program
 
             else if (input == "2")
             {
-                ListGoals.ThesFunction(goals);
+                ListGoals.TheFunction(goals);
             }
 
             else if (input == "3")
             {
-                Console.Write("What is the file name for the goal file? ");
+                SaveGoals.TheFunction(goals);
             }
 
             else if (input == "4")
             {
-                Console.Write("What is the file name for the goal file? ");
+                LoadGoals.TheFunction(goals);
             }
 
             else if (input == "5")
             {
-                Console.WriteLine("The Goals are:");
-                Console.Write("Which goal did you accomplish? ");
-                Console.WriteLine("Congratulations! You have earned X points.");
+                RecordEvent.TheFunction(goals,ref userScore);
             }
 
             else if (input == "6")

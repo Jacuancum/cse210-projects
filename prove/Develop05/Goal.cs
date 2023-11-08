@@ -1,7 +1,8 @@
-public class BaseGoal
+public class Goal
 {
     public string _goalName;
-    public BaseGoal(string goalName)
+    public int _score;
+    public Goal(string goalName)
     {
         _goalName = goalName;
     }

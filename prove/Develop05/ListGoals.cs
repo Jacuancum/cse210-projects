@@ -1,9 +1,20 @@
-public class ListGoals : BaseGoal
+public class ListGoals : Goal
 {
     public ListGoals() : base("") {}
 
-    public static void ThesFunction(List<BaseGoal> goals)
+    public static void TheFunction(List<Goal> goals)
     {
-        Console.WriteLine("The Goals are:");
+        Console.WriteLine("\nThe Goals are:");
+        if (goals.Count == 0)
+        {
+            Console.WriteLine("No goals available.");
+        }
+        else
+        {
+            foreach (Goal goal in goals)
+            {
+                Console.WriteLine(goal.GetName());
+            }
+        }
     }
 }

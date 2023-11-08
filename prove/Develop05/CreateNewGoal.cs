@@ -1,8 +1,8 @@
-public class CreateNewGoal : BaseGoal
+public class CreateNewGoal : Goal
 {
     public CreateNewGoal() : base("") {}
 
-    public static void TheFunction(List<BaseGoal> goals)
+    public static void TheFunction(List<Goal> goals)
     {
         Console.WriteLine("\nThe type of Goals are:");
         Console.WriteLine("1, Simple Goal");
@@ -12,17 +12,22 @@ public class CreateNewGoal : BaseGoal
         string choice = Console.ReadLine();
         if (choice == "1")
         {
-            Console.WriteLine("");
+            Console.Write("\nWhat is the name of your goal? ");
+            string simpleGoalName = Console.ReadLine();
+            SimpleGoal simpleGoal = new SimpleGoal(simpleGoalName);
+            goals.Add(simpleGoal);
+            Console.Write("What is a short description of it? ");
+            Console.Write("What is the amount of points associated with this goal? ");
         }
 
         else if (choice == "2")
         {
-            Console.WriteLine("");
+            Console.Write("What is the name of your goal? ");
         }
 
         else if (choice == "3")
         {
-            Console.WriteLine("");
+            Console.Write("What is the name of your goal? ");
         }
 
         else
