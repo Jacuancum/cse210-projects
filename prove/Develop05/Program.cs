@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 using System;
 
 class Program
@@ -18,10 +20,40 @@ class Program
             Console.WriteLine("6, Quit");
             Console.Write("Select a choice from the menu: ");
             string input = Console.ReadLine();
-
+            
             if (input == "1")
             {
-                CreateNewGoal.TheFunction(goals);
+                Console.WriteLine("\nThe type of Goals are:");
+                Console.WriteLine("1, Simple Goal");
+                Console.WriteLine("2, Eternal Goal");
+                Console.WriteLine("3, Checklist Goal");
+                Console.Write("Which type pf goal would you like to create? ");
+                string choice = Console.ReadLine();
+                if (choice == "1")
+                {
+                    SimpleGoal simpleGoal = new SimpleGoal();
+                    simpleGoal.TheFunction();
+                    goals.Add(new Goal(simpleGoal.GetNewGoal()));
+                }
+
+                else if (choice == "2")
+                {
+                    EternalGoal eternalGoal = new EternalGoal();
+                    eternalGoal.TheFunction();
+                    goals.Add(new Goal(eternalGoal.GetNewGoal()));
+                }
+
+                else if (choice == "3")
+                {
+                    ChecklistGoal checklistGoal = new ChecklistGoal();
+                    checklistGoal.TheFunction();
+                    goals.Add(new Goal(checklistGoal.GetNewGoal()));
+                }
+
+                else
+                {
+                    Console.WriteLine("Invalid. Please enter 1, 2 or 3");
+                }
             }
 
             else if (input == "2")
