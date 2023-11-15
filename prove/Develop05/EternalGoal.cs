@@ -15,19 +15,7 @@ public class EternalGoal : Goal
         Console.Write("What is the amount of points associated with this goal? ");
         string points = Console.ReadLine();
 
-        int lineNumber;
-        string[] existingLines;
-
-        if (File.Exists(fileName))
-        {
-            existingLines = File.ReadAllLines(fileName);
-            lineNumber = existingLines.Length + 1;
-        }
-        else
-        {
-            lineNumber = 1;
-        }
-        newEternalGoal = lineNumber + " [ ] " + goalName +" : "+ goalDescription +", "+ points + " points";
+        newEternalGoal = " [ ] " + goalName +" : "+ goalDescription +", "+ points + " pts";
         Console.WriteLine("A new goal created.");
     }
     public string GetNewGoal()

@@ -15,19 +15,7 @@ public class ChecklistGoal : Goal
         Console.Write("What is the amount of points associated with this goal? ");
         string points = Console.ReadLine();
 
-        int lineNumber;
-        string[] existingLines;
-
-        if (File.Exists(fileName))
-        {
-            existingLines = File.ReadAllLines(fileName);
-            lineNumber = existingLines.Length + 1;
-        }
-        else
-        {
-            lineNumber = 1;
-        }
-        newChecklistGoal = lineNumber + " [ ] " + goalName +" : "+ goalDescription +", "+ points + " points";
+        newChecklistGoal = " [ ] " + goalName +" : "+ goalDescription +", "+ points + " pts";
         Console.WriteLine("A new goal created.");
     }
     public string GetNewGoal()

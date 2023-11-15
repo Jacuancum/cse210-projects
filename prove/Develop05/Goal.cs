@@ -7,6 +7,7 @@ public class Goal
     public string newSimpleGoal;
     public string newChecklistGoal;
     public string newEternalGoal;
+    public int lineNumber;
     public string fileName;
     public Goal(string goalName)
     {
@@ -22,5 +23,4 @@ public class Goal
     {
         _goalName = goalName;
     }
-    
 }

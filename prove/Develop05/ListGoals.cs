@@ -1,7 +1,8 @@
+using System.Runtime.CompilerServices;
+
 public class ListGoals : Goal
 {
     public ListGoals() : base("") {}
-
     public static void TheFunction(List<Goal> goals)
     {
         Console.WriteLine("\nThe Goals are:");
@@ -11,9 +12,11 @@ public class ListGoals : Goal
         }
         else
         {
+            int lineNumber = 1;
             foreach (Goal goal in goals)
             {
-                Console.WriteLine(goal.GetName());
+                Console.WriteLine($"{lineNumber}{goal.GetName()}");
+                lineNumber++;
             }
         }
     }
