@@ -11,7 +11,7 @@ class Program
         
         while (true)
         {
-            Console.WriteLine("\nYou have X points.");
+            Console.WriteLine($"\nYou have {userScore} points.");
             Console.WriteLine("1, Create New Goal");
             Console.WriteLine("2, List Goals");
             Console.WriteLine("3, Save Goals");
@@ -73,7 +73,8 @@ class Program
 
             else if (input == "5")
             {
-                RecordEvent.TheFunction(goals,ref userScore);
+                RecordEvent recordEvent = new RecordEvent();
+                recordEvent.TheFunction(goals, ref userScore, "");
             }
 
             else if (input == "6")

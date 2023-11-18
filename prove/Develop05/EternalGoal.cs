@@ -15,11 +15,11 @@ public class EternalGoal : Goal
         Console.Write("What is the amount of points associated with this goal? ");
         string points = Console.ReadLine();
 
-        newEternalGoal = " [ ] " + goalName +" : "+ goalDescription +", "+ points + " pts";
+        _newEternalGoal = " [ ] " + goalName +" : "+ goalDescription +", "+ points + " pts";
         Console.WriteLine("A new goal created.");
     }
-    public string GetNewGoal()
+    public override string GetNewGoal()
     {
-        return newEternalGoal;
+        return _newEternalGoal;
     }
 }

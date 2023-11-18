@@ -15,11 +15,8 @@ public class SimpleGoal : Goal
         Console.Write("What is the amount of points associated with this goal? ");
         string points = Console.ReadLine();
 
-        newSimpleGoal = " [ ] " + goalName +" : "+ goalDescription +", "+ points + " pts";
+        _newSimpleGoal = " [ ] " + goalName +" : "+ goalDescription +", "+ points + " pts";
         Console.WriteLine("A new goal created.");
     }
-    public string GetNewGoal()
-    {
-        return newSimpleGoal;
-    }
+    
 }

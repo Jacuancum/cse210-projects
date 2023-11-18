@@ -1,26 +1,39 @@
 public class Goal
 {
-    public string _goalName;
-    public string _goalDescription;
-    public string _point;
-    public int _userScore;
-    public string newSimpleGoal;
-    public string newChecklistGoal;
-    public string newEternalGoal;
-    public int lineNumber;
-    public string fileName;
+    protected string _goalName;
+    protected int userScore;
+    protected string _newSimpleGoal;
+    protected string _newChecklistGoal;
+    protected string _newEternalGoal;
+    protected List<Goal> goals;
+    protected string fileName;
     public Goal(string goalName)
     {
         _goalName = goalName;
     }
     
-    public string GetName()
+    protected virtual string GetName()
     {
         return _goalName;
     }
 
-    public void SetName(string goalName)
+    public virtual void SetName(string goalName)
     {
         _goalName = goalName;
     }
+
+    public virtual string GetNewGoal()
+    {
+        return _newSimpleGoal;
+    }
+    
+
+
+    /*
+    protected override int RecordEvent()
+    {
+        CompletionStatus = true;
+        return points;
+    }
+    */
 }
