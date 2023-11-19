@@ -19,34 +19,53 @@ public class RecordEvent : Goal
                 if (completedTaskIndex > 0 && completedTaskIndex <= goals.Count)
                 {
                     Goal completedGoal = goals[completedTaskIndex - 1]; // Get the completed goal
-
-                    // Get the goal's current name
-                    string goalInfo = completedGoal.GetName();
-
-                    // Modify the goal's name to mark it as completed
-                    goalInfo = goalInfo.Replace("[ ]", "[X]");
-
-                    // Update the goal information in the list
-                    completedGoal.SetName(goalInfo);
-
-                    // Add points to userScore
-                    string[] parts = goalInfo.Split(',');
-                    if (parts.Length > 1)
+                    // To separate eternal goal
+                    if (completedGoal is SimpleGoal || completedGoal is ChecklistGoal)
                     {
-                        string pointsPart = parts[parts.Length - 1].Trim();
-                        if (pointsPart.EndsWith("pts"))
+                        // Get the goal's current name
+                        string goalInfo = completedGoal.GetName();
+
+                        // Modify the goal's name to mark it as completed
+                        goalInfo = goalInfo.Replace("[ ]", "[X]");
+
+                        // Update the goal information in the list
+                        completedGoal.SetName(goalInfo);
+                        
+                        // Add points to userScore
+                        string[] parts = goalInfo.Split(',');
+                        if (parts.Length > 1)
                         {
-                            string pointsStr = pointsPart.Replace("pts", "").Trim();
-                            if (int.TryParse(pointsStr, out int points))
+                            string pointsPart = parts[parts.Length - 1].Trim();
+                            if (pointsPart.EndsWith("pts"))
                             {
-                                userScore += points; // Add points to userScore
+                                string pointsStr = pointsPart.Replace("pts", "").Trim();
+                                if (int.TryParse(pointsStr, out int points))
+                                {
+                                    userScore += points; // Add points to userScore
+                                }
                             }
                         }
                     }
-
-                // Display the updated goal and user score
-                Console.WriteLine($"You accomplished: {goalInfo}");
-                Console.WriteLine($"Updated user score: {userScore}");
+                    else if (completedGoal is EternalGoal)
+                    {
+                        string goalInfo = completedGoal.GetName();
+                        completedGoal.SetName(goalInfo);
+                        string[] parts = goalInfo.Split(',');
+                        if (parts.Length > 1)
+                        {
+                            string pointsPart = parts[parts.Length - 1].Trim();
+                            if (pointsPart.EndsWith("pts"))
+                            {
+                                string pointsStr = pointsPart.Replace("pts", "").Trim();
+                                if (int.TryParse(pointsStr, out int points))
+                                {
+                                    userScore += points;
+                                }
+                            }
+                        }
+                    }
+                    // Display the updated user score
+                    Console.WriteLine($"Updated user score: {userScore}");
                 }
                 else
                 {

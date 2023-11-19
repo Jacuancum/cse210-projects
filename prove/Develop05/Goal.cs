@@ -1,18 +1,19 @@
 public class Goal
 {
     protected string _goalName;
-    protected int userScore;
+    protected int _userScore;
     protected string _newSimpleGoal;
     protected string _newChecklistGoal;
     protected string _newEternalGoal;
+    protected string _result;
     protected List<Goal> goals;
-    protected string fileName;
+    protected string _fileName;
     public Goal(string goalName)
     {
         _goalName = goalName;
     }
     
-    protected virtual string GetName()
+    public virtual string GetName()
     {
         return _goalName;
     }
@@ -27,13 +28,4 @@ public class Goal
         return _newSimpleGoal;
     }
     
-
-
-    /*
-    protected override int RecordEvent()
-    {
-        CompletionStatus = true;
-        return points;
-    }
-    */
 }

@@ -68,7 +68,9 @@ class Program
 
             else if (input == "4")
             {
-                LoadGoals.TheFunction(goals);
+                LoadGoals loadGoals = new LoadGoals();
+                loadGoals.TheFunction(goals);
+                goals.Add(new Goal(loadGoals.GetNewGoal()));
             }
 
             else if (input == "5")
