@@ -7,17 +7,16 @@ public class SaveGoals : Goal
         Console.Write("\nWhat is the filename for the goal file? ");
         string fileName = Console.ReadLine();
 
-        // Extract the goal information from the List<Goal>
+        // Get the goal information from the List<Goal>
         List<string> goalLines = new List<string>();
         foreach (Goal goal in goals)
         {
-            goalLines.Add(goal.GetName()); // Assuming GetName returns the goal information
+            goalLines.Add(goal.GetName()); // GetName returns the goal information
         }
 
-        // Check if the file exists
         if (File.Exists(fileName))
         {
-            // Append the goal lines to the existing file
+            // Append goal lines to the existing file
             File.AppendAllLines(fileName, goalLines);
             Console.WriteLine("Goals added to the existing file.");
         }

@@ -27,5 +27,5 @@ public class Goal
     {
         return _newSimpleGoal;
     }
-    
+
 }

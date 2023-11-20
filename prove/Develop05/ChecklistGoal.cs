@@ -15,7 +15,10 @@ public class ChecklistGoal : Goal
         Console.Write("What is the amount of points associated with this goal? ");
         string points = Console.ReadLine();
 
-        _newChecklistGoal = " [ ] " + goalName +" : "+ goalDescription +", "+ points + " pts";
+        Console.Write("How many times does this goal need to be accomplished? ");
+        string numberoftime = Console.ReadLine();
+
+        _newChecklistGoal = " [ ] " + goalName +" : "+ goalDescription +", "+ points + " pts," + numberoftime;
         Console.WriteLine("A new goal created.");
     }
     

@@ -65,7 +65,8 @@ public class RecordEvent : Goal
                         }
                     }
                     // Display the updated user score
-                    Console.WriteLine($"Updated user score: {userScore}");
+                    Console.WriteLine("Congratulations!");
+                    Console.WriteLine($"You now have {userScore} points.");
                 }
                 else
                 {

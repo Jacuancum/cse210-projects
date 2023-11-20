@@ -17,6 +17,7 @@ public class SimpleGoal : Goal
 
         _newSimpleGoal = " [ ] " + goalName +" : "+ goalDescription +", "+ points + " pts";
         Console.WriteLine("A new goal created.");
+        
     }
     
 }
