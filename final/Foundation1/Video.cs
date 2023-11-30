@@ -29,4 +29,20 @@ class Video
         _length = length;
         comments = new List<Comment>();
     }
+
+    public void AddComment(string commenterName, string text)
+    {
+        Comment comment = new Comment(commenterName, text);
+        comments.Add(comment);
+    }
+
+    public int GetNumComments()
+    {
+        return comments.Count;
+    }
+
+    public List<Comment> GetComments()
+    {
+        return comments;
+    }
 }
