@@ -11,6 +11,11 @@ class Program
         video1.AddComment("Tyler", "Interesting content");
         videos.Add(video1);
 
+        Video video2 = new Video("The Batman", "Matt Reeves", 176);
+        video2.AddComment("Robert", "Exciting movie!");
+        video2.AddComment("Jeffrey", "Can not breath!");
+        videos.Add(video2);
+
         foreach (Video video in videos)
         {
             Console.WriteLine("Title: " + video._title);
