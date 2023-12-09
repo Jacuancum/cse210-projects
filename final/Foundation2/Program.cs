@@ -4,6 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        //Create customers infomation and products data
         Address addressIntl1 = new Address("56 Cornwall St.", "Kowloon Tong", "Kowloon", "Hong Kong");
         Customer customerIntl1 = new Customer("Tim Cook", addressIntl1);
 
@@ -18,6 +19,7 @@ class Program
         Product product3 = new Product("Cokecola", 00301, 0.49m, 12);
         Product product4 = new Product("1 pack of 6 Egg", 00401, 29.99m, 2);
 
+        //Create order and assign to the right customer, then add products into the order
         Order order1 = new Order(customerIntl1);
         order1.AddProduct(product1);
         order1.AddProduct(product2);

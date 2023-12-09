@@ -5,13 +5,13 @@ class Customer
 
     public Customer(string name, Address address)
     {
-        this._name = name;
-        this._address = address;
+        _name = name;
+        _address = address;
     }
 
-    public bool IsInUSA()
+    public bool InsideUSA()
     {
-        return _address.IsInUSA();
+        return _address.InsideUSA();
     }
 
     public string GetName()

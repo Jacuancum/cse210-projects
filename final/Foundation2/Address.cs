@@ -5,15 +5,16 @@ class Address
     private string _state;
     private string _country;
 
+    //Create Address variable then add all the related attributes into it
     public Address(string streetAddress, string city, string state, string country)
     {
-        this._streetAddress = streetAddress;
-        this._city = city;
-        this._state = state;
-        this._country = country;
+        _streetAddress = streetAddress;
+        _city = city;
+        _state = state;
+        _country = country;
     }
 
-    public bool IsInUSA()
+    public bool InsideUSA()
     {
         return _country.ToLower() == "usa";
     }

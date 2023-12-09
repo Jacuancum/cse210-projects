@@ -5,7 +5,7 @@ class Order
 
     public Order(Customer customer)
     {
-        this._customer = customer;
+        _customer = customer;
         _products = new List<Product>();
     }
 
@@ -22,7 +22,7 @@ class Order
             totalCost += product.CalculateTotalPrice();
         }
 
-        if (_customer.IsInUSA())
+        if (_customer.InsideUSA())
         {
             totalCost += 7; // USA shipping cost
         }
@@ -46,7 +46,7 @@ class Order
 
     public string GetShippingLabel()
     {
-        Customer customer = this._customer;
+        Customer customer = _customer;
         Address address = customer.GetAddress();
 
         string label = "[Shipping Label]\n";
