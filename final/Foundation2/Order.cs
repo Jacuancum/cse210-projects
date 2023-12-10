@@ -24,11 +24,11 @@ class Order
 
         if (_customer.InsideUSA())
         {
-            totalCost += 7; // USA shipping cost
+            totalCost += 5; // USA shipping cost
         }
         else
         {
-            totalCost += 28; // International shipping cost
+            totalCost += 35; // International shipping cost
         }
 
         return totalCost;
