@@ -1,6 +1,6 @@
 class Cycling : Activity
 {
-    public Cycling() : base()
+    public Cycling(DateTime date, int lengthMinutes, double speed) : base(date, lengthMinutes)
     {
         
     }
