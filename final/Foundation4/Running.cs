@@ -22,11 +22,11 @@ class Running : Activity
 
     public override string GetSummary()
     {
-        string distanceUnit = "miles";
+        string distanceUnit = "mile";
         double distance = GetDistance();
         double speed = GetSpeed();
         double pace = GetPace();
         
-        return $"{base.GetSummary()} - Distance: {distance} {distanceUnit}, Speed: {speed:F1} mph, Pace: {pace:F1} min/{distanceUnit}";
+        return $"{base.GetSummary()} - Distance: {distance} {distanceUnit}, Speed: {speed} mph, Pace: {pace} min/{distanceUnit}";
     }
 }
